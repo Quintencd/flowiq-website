@@ -1,4 +1,7 @@
 (function () {
+  if (window.__flowiqGrowthAnalyticsLoaded) return;
+  window.__flowiqGrowthAnalyticsLoaded = true;
+
   var runtimeConfig = window.FlowIQAnalyticsConfig || {};
   var clarityProjectId = runtimeConfig.clarityProjectId || '';
 
@@ -262,7 +265,7 @@
         }
 
         if (formName.indexOf('lead') >= 0 || formName.indexOf('calculator') >= 0) {
-          trackGrowthEvent('calculator_use', formParams);
+          trackGrowthEvent('lead_form_attempt', formParams);
         }
       });
     });
@@ -425,7 +428,7 @@
     trackAccountCreated: function (params) { trackGrowthEvent('account_created', params || {}); }
   };
 
-  document.addEventListener('DOMContentLoaded', function () {
+  function initialize() {
     installSchema();
     installFunnelTracking();
     installScrollTracking();
@@ -434,5 +437,11 @@
     installVideoTracking();
     installModuleEngagementTracking();
     installClarity();
-  });
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initialize, { once: true });
+  } else {
+    initialize();
+  }
 })();

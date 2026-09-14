@@ -222,7 +222,6 @@
                       '<a href="/modules/ai-auto-capture.html"><i data-lucide="sparkles"></i><span><strong>AI Auto Capture</strong><small>Email-to-review queues</small></span></a>' +
                       '<a href="/modules/agentsiq.html"><i data-lucide="bot"></i><span><strong>AgentsIQ</strong><small>Guarded AI assistance</small></span></a>' +
                       '<a href="/modules/rfid-stock-tracking.html"><i data-lucide="scan-line"></i><span><strong>RFID Stock Tracking</strong><small>Supervised scan evidence</small></span></a>' +
-                      '<a href="/modules/business-units.html"><i data-lucide="network"></i><span><strong>Business Units</strong><small>Local control, group view</small></span></a>' +
                     '</div>' +
                   '</div>' +
                 '</div>' +

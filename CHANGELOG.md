@@ -1,5 +1,15 @@
 # FlowIQ Marketing Website Changelog
 
+## [Unreleased] - September 14, 2026
+
+- Restore growth tracking when loaded after DOM readiness and prevent duplicate initialization.
+- Delay demo module-selection errors until submission is attempted.
+- Separate calculator/lead-form attempts from calculator-use events.
+- Validation: 10 tests, 32-module validator, SEO parity, local HTTP/browser checks.
+- Reporting comparison risk (planning estimate): 15–25%; annotate the eventual release date.
+- Known remaining findings: mobile demo-form clipping and pre-acceptance demo-submit tracking.
+- Details: `docs/Website/2026-09-14_weekly_growth_audit.md`. No commit, push or deployment.
+
 ## [Unreleased] - August 26, 2026
 
 ### Homepage ERP positioning

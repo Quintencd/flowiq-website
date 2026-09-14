@@ -417,10 +417,8 @@
       'ai_auto_capture',
       'forecasting_intelligence_pack',
       'ecom_pack',
-      'messaging_pack',
       'posiq_till_integration_pack',
       'payroll_pack',
-      'business_units',
       'trade_portal',
       'projectsiq_addon',
       'projectsiq_growth',
@@ -441,10 +439,8 @@
       ai_auto_capture: 'AI automation',
       forecasting_intelligence_pack: 'Forecasting',
       ecom_pack: 'Ecommerce',
-      messaging_pack: 'Messaging',
       posiq_till_integration_pack: 'Retail',
       payroll_pack: 'Payroll',
-      business_units: 'Multi-entity',
       trade_portal: 'Customer ordering',
       projectsiq_addon: 'Projects',
       projectsiq_growth: 'Projects',
@@ -586,10 +582,6 @@
         name: 'Ecom Pack',
         value_points: ['Connects ecommerce demand back into stock and invoicing', 'Reduces manual online order and catalogue handling']
       },
-      messaging_pack: {
-        name: 'Messaging Pack',
-        value_points: ['Activates WhatsApp workflow messaging inside FlowIQ', 'Keeps Meta or BSP conversation fees separate and transparent']
-      },
       posiq_till_integration_pack: {
         name: 'POSIQ Till Integration Pack',
         value_points: ['Connects retail till activity back into FlowIQ stock and finance workflows', 'Supports branch-level selling without changing the customer base plan']
@@ -597,10 +589,6 @@
       payroll_pack: {
         name: 'PayrollIQ',
         value_points: ['Complete payroll and employee self-service are included', 'Inactive and terminated employees do not count toward capacity']
-      },
-      business_units: {
-        name: 'Business Units Pack',
-        value_points: ['Adds branch, division and entity-level operating separation', 'Keeps reporting and approvals cleaner for growing teams']
       },
       trade_portal: {
         name: 'Trade Portal',
@@ -829,12 +817,6 @@
       );
     }
 
-    function getWhatsAppLabel(plan) {
-      if (hasFeature(plan, 'whatsapp_api_messaging') || hasFeature(plan, 'whatsapp_web_messaging')) return 'Included';
-      if (hasAddOn(plan, 'messaging_pack')) return 'Add-on available';
-      return '—';
-    }
-
     function addOnAvailabilityLabel(plan, addOnKey, included) {
       if (included) return 'Included';
       return hasAddOn(plan, addOnKey) ? 'Add-on available' : '—';
@@ -925,12 +907,6 @@
         },
         {
           type: 'row',
-          label: 'Business Units',
-          get: (p) => addOnAvailabilityLabel(p, 'business_units', hasFeature(p, 'business_units')),
-          center: true
-        },
-        {
-          type: 'row',
           label: 'Trade Portal customer ordering',
           get: (p) => addOnAvailabilityLabel(p, 'trade_portal', hasFeature(p, 'trade_portal')),
           center: true
@@ -948,7 +924,6 @@
         { type: 'row', label: 'Manufacturing & Kitsets (BOM)', get: (p) => hasManufacturingKitsets(p) ? '✓' : '—', tick: true, center: true },
         { type: 'row', label: 'BankingIQ payments, beneficiaries & approvals', get: (p) => addOnAvailabilityLabel(p, 'bankingiq_addon', hasFeature(p, 'bankingiq')), center: true },
         { type: 'row', label: 'BankingIQ automated reconciliation & cash-flow intelligence', get: (p) => addOnAvailabilityLabel(p, 'bankingiq_addon', hasAdvancedReconciliation(p)), center: true },
-        { type: 'row', label: 'WhatsApp messaging', get: (p) => getWhatsAppLabel(p) },
         {
           type: 'row',
           label: 'Commission + rebate automation',

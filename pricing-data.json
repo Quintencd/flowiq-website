@@ -1,5 +1,5 @@
 {
-  "generated_at_utc": "2026-09-03T10:50:07.638Z",
+  "generated_at_utc": "2026-09-14T10:20:30.830Z",
   "source": "src/config/subscriptionPlans.js",
   "plan_order": [
     "starter_lite",
@@ -87,7 +87,6 @@
         "selectableAddOns": [
           "forecasting_intelligence_pack",
           "bankingiq_addon",
-          "business_units",
           "payroll_pack",
           "ai_auto_capture"
         ]
@@ -401,23 +400,6 @@
           "tier_group": null,
           "tier_label": null
         },
-        "messaging_pack": {
-          "name": "Messaging Pack",
-          "price": 250,
-          "price_usd": 19,
-          "annual_price": 2700,
-          "annual_price_usd": 205,
-          "annual_discount_percent": 10,
-          "limit": 1,
-          "unit": "workspace",
-          "description": "WhatsApp Web and WhatsApp API workflow activation. Meta/BSP conversation and API fees remain billed separately.",
-          "value_points": [
-            "Adds customer messaging where invoice, quote, and follow-up work already happens",
-            "Keeps the FlowIQ platform fee low while external WhatsApp fees remain transparent"
-          ],
-          "tier_group": null,
-          "tier_label": null
-        },
         "posiq_till_integration_pack": {
           "name": "POSIQ Till Integration Pack",
           "price": 790,
@@ -448,23 +430,6 @@
           "value_points": [
             "Includes all PayrollIQ features and employee self-service for up to 5 active employees",
             "Scales simply at R20 per additional active employee; inactive and terminated employees do not count"
-          ],
-          "tier_group": null,
-          "tier_label": null
-        },
-        "business_units": {
-          "name": "Business Units",
-          "price": 600,
-          "price_usd": 59,
-          "annual_price": 6480,
-          "annual_price_usd": 637,
-          "annual_discount_percent": 10,
-          "limit": 1,
-          "unit": "workspace",
-          "description": "Unlimited internal subsidiaries, divisions, branches, brands, and cost centres inside one legal company.",
-          "value_points": [
-            "Adds a clean internal structure without creating separate FlowIQ companies",
-            "Sets the foundation for unit-level payroll, expenses, invoices, and reporting"
           ],
           "tier_group": null,
           "tier_label": null
@@ -837,23 +802,6 @@
           "tier_group": null,
           "tier_label": null
         },
-        "messaging_pack": {
-          "name": "Messaging Pack",
-          "price": 250,
-          "price_usd": 19,
-          "annual_price": 2700,
-          "annual_price_usd": 205,
-          "annual_discount_percent": 10,
-          "limit": 1,
-          "unit": "workspace",
-          "description": "WhatsApp Web and WhatsApp API workflow activation. Meta/BSP conversation and API fees remain billed separately.",
-          "value_points": [
-            "Adds customer messaging where invoice, quote, and follow-up work already happens",
-            "Keeps the FlowIQ platform fee low while external WhatsApp fees remain transparent"
-          ],
-          "tier_group": null,
-          "tier_label": null
-        },
         "posiq_till_integration_pack": {
           "name": "POSIQ Till Integration Pack",
           "price": 790,
@@ -884,23 +832,6 @@
           "value_points": [
             "Includes all PayrollIQ features and employee self-service for up to 5 active employees",
             "Scales simply at R20 per additional active employee; inactive and terminated employees do not count"
-          ],
-          "tier_group": null,
-          "tier_label": null
-        },
-        "business_units": {
-          "name": "Business Units",
-          "price": 600,
-          "price_usd": 59,
-          "annual_price": 6480,
-          "annual_price_usd": 637,
-          "annual_discount_percent": 10,
-          "limit": 1,
-          "unit": "workspace",
-          "description": "Unlimited internal subsidiaries, divisions, branches, brands, and cost centres inside one legal company.",
-          "value_points": [
-            "Adds a clean internal structure without creating separate FlowIQ companies",
-            "Sets the foundation for unit-level payroll, expenses, invoices, and reporting"
           ],
           "tier_group": null,
           "tier_label": null
@@ -1294,23 +1225,6 @@
           "tier_group": null,
           "tier_label": null
         },
-        "messaging_pack": {
-          "name": "Messaging Pack",
-          "price": 250,
-          "price_usd": 19,
-          "annual_price": 2700,
-          "annual_price_usd": 205,
-          "annual_discount_percent": 10,
-          "limit": 1,
-          "unit": "workspace",
-          "description": "WhatsApp Web and WhatsApp API workflow activation. Meta/BSP conversation and API fees remain billed separately.",
-          "value_points": [
-            "Adds customer messaging where invoice, quote, and follow-up work already happens",
-            "Keeps the FlowIQ platform fee low while external WhatsApp fees remain transparent"
-          ],
-          "tier_group": null,
-          "tier_label": null
-        },
         "posiq_till_integration_pack": {
           "name": "POSIQ Till Integration Pack",
           "price": 790,
@@ -1341,23 +1255,6 @@
           "value_points": [
             "Includes all PayrollIQ features and employee self-service for up to 5 active employees",
             "Scales simply at R20 per additional active employee; inactive and terminated employees do not count"
-          ],
-          "tier_group": null,
-          "tier_label": null
-        },
-        "business_units": {
-          "name": "Business Units",
-          "price": 600,
-          "price_usd": 59,
-          "annual_price": 6480,
-          "annual_price_usd": 637,
-          "annual_discount_percent": 10,
-          "limit": 1,
-          "unit": "workspace",
-          "description": "Unlimited internal subsidiaries, divisions, branches, brands, and cost centres inside one legal company.",
-          "value_points": [
-            "Adds a clean internal structure without creating separate FlowIQ companies",
-            "Sets the foundation for unit-level payroll, expenses, invoices, and reporting"
           ],
           "tier_group": null,
           "tier_label": null
@@ -1775,23 +1672,6 @@
           "tier_group": null,
           "tier_label": null
         },
-        "messaging_pack": {
-          "name": "Messaging Pack",
-          "price": 250,
-          "price_usd": 19,
-          "annual_price": 2700,
-          "annual_price_usd": 205,
-          "annual_discount_percent": 10,
-          "limit": 1,
-          "unit": "workspace",
-          "description": "WhatsApp Web and WhatsApp API workflow activation. Meta/BSP conversation and API fees remain billed separately.",
-          "value_points": [
-            "Adds customer messaging where invoice, quote, and follow-up work already happens",
-            "Keeps the FlowIQ platform fee low while external WhatsApp fees remain transparent"
-          ],
-          "tier_group": null,
-          "tier_label": null
-        },
         "posiq_till_integration_pack": {
           "name": "POSIQ Till Integration Pack",
           "price": 790,
@@ -1822,23 +1702,6 @@
           "value_points": [
             "Includes all PayrollIQ features and employee self-service for up to 5 active employees",
             "Scales simply at R20 per additional active employee; inactive and terminated employees do not count"
-          ],
-          "tier_group": null,
-          "tier_label": null
-        },
-        "business_units": {
-          "name": "Business Units",
-          "price": 600,
-          "price_usd": 59,
-          "annual_price": 6480,
-          "annual_price_usd": 637,
-          "annual_discount_percent": 10,
-          "limit": 1,
-          "unit": "workspace",
-          "description": "Unlimited internal subsidiaries, divisions, branches, brands, and cost centres inside one legal company.",
-          "value_points": [
-            "Adds a clean internal structure without creating separate FlowIQ companies",
-            "Sets the foundation for unit-level payroll, expenses, invoices, and reporting"
           ],
           "tier_group": null,
           "tier_label": null
@@ -2224,23 +2087,6 @@
           "tier_group": null,
           "tier_label": null
         },
-        "messaging_pack": {
-          "name": "Messaging Pack",
-          "price": 250,
-          "price_usd": 19,
-          "annual_price": 2700,
-          "annual_price_usd": 205,
-          "annual_discount_percent": 10,
-          "limit": 1,
-          "unit": "workspace",
-          "description": "WhatsApp Web and WhatsApp API workflow activation. Meta/BSP conversation and API fees remain billed separately.",
-          "value_points": [
-            "Adds customer messaging where invoice, quote, and follow-up work already happens",
-            "Keeps the FlowIQ platform fee low while external WhatsApp fees remain transparent"
-          ],
-          "tier_group": null,
-          "tier_label": null
-        },
         "posiq_till_integration_pack": {
           "name": "POSIQ Till Integration Pack",
           "price": 790,
@@ -2271,23 +2117,6 @@
           "value_points": [
             "Includes all PayrollIQ features and employee self-service for up to 5 active employees",
             "Scales simply at R20 per additional active employee; inactive and terminated employees do not count"
-          ],
-          "tier_group": null,
-          "tier_label": null
-        },
-        "business_units": {
-          "name": "Business Units",
-          "price": 600,
-          "price_usd": 59,
-          "annual_price": 6480,
-          "annual_price_usd": 637,
-          "annual_discount_percent": 10,
-          "limit": 1,
-          "unit": "workspace",
-          "description": "Unlimited internal subsidiaries, divisions, branches, brands, and cost centres inside one legal company.",
-          "value_points": [
-            "Adds a clean internal structure without creating separate FlowIQ companies",
-            "Sets the foundation for unit-level payroll, expenses, invoices, and reporting"
           ],
           "tier_group": null,
           "tier_label": null
@@ -2644,23 +2473,6 @@
           "tier_group": null,
           "tier_label": null
         },
-        "messaging_pack": {
-          "name": "Messaging Pack",
-          "price": 250,
-          "price_usd": 19,
-          "annual_price": 2700,
-          "annual_price_usd": 205,
-          "annual_discount_percent": 10,
-          "limit": 1,
-          "unit": "workspace",
-          "description": "WhatsApp Web and WhatsApp API workflow activation. Meta/BSP conversation and API fees remain billed separately.",
-          "value_points": [
-            "Adds customer messaging where invoice, quote, and follow-up work already happens",
-            "Keeps the FlowIQ platform fee low while external WhatsApp fees remain transparent"
-          ],
-          "tier_group": null,
-          "tier_label": null
-        },
         "posiq_till_integration_pack": {
           "name": "POSIQ Till Integration Pack",
           "price": 790,
@@ -2691,23 +2503,6 @@
           "value_points": [
             "Includes all PayrollIQ features and employee self-service for up to 5 active employees",
             "Scales simply at R20 per additional active employee; inactive and terminated employees do not count"
-          ],
-          "tier_group": null,
-          "tier_label": null
-        },
-        "business_units": {
-          "name": "Business Units",
-          "price": 600,
-          "price_usd": 59,
-          "annual_price": 6480,
-          "annual_price_usd": 637,
-          "annual_discount_percent": 10,
-          "limit": 1,
-          "unit": "workspace",
-          "description": "Unlimited internal subsidiaries, divisions, branches, brands, and cost centres inside one legal company.",
-          "value_points": [
-            "Adds a clean internal structure without creating separate FlowIQ companies",
-            "Sets the foundation for unit-level payroll, expenses, invoices, and reporting"
           ],
           "tier_group": null,
           "tier_label": null
@@ -3064,23 +2859,6 @@
           "tier_group": null,
           "tier_label": null
         },
-        "messaging_pack": {
-          "name": "Messaging Pack",
-          "price": 250,
-          "price_usd": 19,
-          "annual_price": 2700,
-          "annual_price_usd": 205,
-          "annual_discount_percent": 10,
-          "limit": 1,
-          "unit": "workspace",
-          "description": "WhatsApp Web and WhatsApp API workflow activation. Meta/BSP conversation and API fees remain billed separately.",
-          "value_points": [
-            "Adds customer messaging where invoice, quote, and follow-up work already happens",
-            "Keeps the FlowIQ platform fee low while external WhatsApp fees remain transparent"
-          ],
-          "tier_group": null,
-          "tier_label": null
-        },
         "posiq_till_integration_pack": {
           "name": "POSIQ Till Integration Pack",
           "price": 790,
@@ -3111,23 +2889,6 @@
           "value_points": [
             "Includes all PayrollIQ features and employee self-service for up to 5 active employees",
             "Scales simply at R20 per additional active employee; inactive and terminated employees do not count"
-          ],
-          "tier_group": null,
-          "tier_label": null
-        },
-        "business_units": {
-          "name": "Business Units",
-          "price": 600,
-          "price_usd": 59,
-          "annual_price": 6480,
-          "annual_price_usd": 637,
-          "annual_discount_percent": 10,
-          "limit": 1,
-          "unit": "workspace",
-          "description": "Unlimited internal subsidiaries, divisions, branches, brands, and cost centres inside one legal company.",
-          "value_points": [
-            "Adds a clean internal structure without creating separate FlowIQ companies",
-            "Sets the foundation for unit-level payroll, expenses, invoices, and reporting"
           ],
           "tier_group": null,
           "tier_label": null

@@ -31,10 +31,12 @@
     return moduleInputs.filter((input) => input.checked).map((input) => input.value);
   }
 
+  let submissionAttempted = false;
+
   function syncModules() {
     const values = selectedModules();
     featureInterest.value = values.join(', ');
-    moduleError?.classList.toggle('hidden', values.length > 0);
+    moduleError?.classList.toggle('hidden', !submissionAttempted || values.length > 0);
     return values;
   }
 
@@ -92,6 +94,7 @@
   moduleInputs.forEach((input) => input.addEventListener('change', syncModules));
 
   form.addEventListener('submit', function (event) {
+    submissionAttempted = true;
     const modules = syncModules();
     if (modules.length === 0) {
       event.preventDefault();

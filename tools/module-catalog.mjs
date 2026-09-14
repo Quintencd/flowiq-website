@@ -506,22 +506,6 @@ export const modules = [
     outcomes: ['Less manual calculation work', 'Faster exception discovery', 'More defensible settlements'],
     connects: ['salesiq', 'accountingiq', 'reportsiq'],
   }),
-  module({
-    slug: 'business-units',
-    name: 'Business Units',
-    category: automation,
-    type: 'Add-on',
-    icon: 'network',
-    tagline: 'Operate multiple units without losing group visibility.',
-    summary: 'Separate operational context by branch or business unit while retaining controlled group-level reporting, access, and shared governance.',
-    benefit: 'Growing groups can preserve local accountability and still understand the whole business.',
-    image: '/assets/img/generated/business-command-story.webp',
-    imageAlt: 'FlowIQ multi-business-unit operating story',
-    features: ['Business-unit and branch context', 'Scoped operational visibility', 'Group-level comparison', 'Shared governance and reporting'],
-    workflow: ['Define the operating units', 'Scope users and transactions', 'Run local workflows', 'Compare and govern at group level'],
-    outcomes: ['Clearer unit accountability', 'Safer access boundaries', 'Better group visibility'],
-    connects: ['dashboardiq', 'companiesiq', 'reportsiq'],
-  }),
 ]
 
 export const moduleBySlug = new Map(modules.map((entry) => [entry.slug, entry]))

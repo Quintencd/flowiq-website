@@ -14,13 +14,34 @@ test('public ERP route is no longer ignored and keeps canonical and rewrite', ()
   assert.equal(ignored, '');
 });
 
-test('Business Units page and its module image are not ignored', () => {
-  const root = new URL('../', import.meta.url);
-  assert.match(read('.gitignore'), /!\/modules\/business-units\.html/);
-  assert.match(read('.gitignore'), /!\/assets\/img\/generated\/business-command-story\.webp/);
-  assert.match(read('modules/business-units.html'), /business-command-story\.webp/);
-  const ignored = execFileSync('git', ['ls-files', '--others', '--ignored', '--exclude-standard', '--', 'modules/business-units.html', 'assets/img/generated/business-command-story.webp'], { cwd: root, encoding: 'utf8' });
-  assert.equal(ignored, '');
+test('unfinished Business Units offer is retained but not publicly discoverable', () => {
+  const directory = read('modules.html');
+  const navigation = read('assets/js/main.js');
+  const sitemap = read('sitemap.xml');
+  const detail = read('modules/business-units.html');
+  const redirects = read('netlify.toml');
+
+  assert.doesNotMatch(directory, /Business Units|business-units/);
+  assert.doesNotMatch(navigation, /Business Units|business-units/);
+  assert.doesNotMatch(sitemap, /modules\/business-units\.html/);
+  assert.match(detail, /<meta name="robots" content="noindex,nofollow,noarchive">/);
+  assert.match(redirects, /from = "\/modules\/business-units"\s+to = "\/modules\.html"\s+status = 302\s+force = true/);
+  assert.match(redirects, /from = "\/modules\/business-units\.html"\s+to = "\/modules\.html"\s+status = 302\s+force = true/);
+});
+
+test('unfinished add-ons are absent from public pricing', () => {
+  const pricing = read('pricing.html');
+  const payload = JSON.parse(read('pricing-data.json'));
+
+  assert.doesNotMatch(pricing, /Messaging Pack|messaging_pack|WhatsApp messaging/);
+  assert.doesNotMatch(pricing, /Business Units|business_units/);
+  for (const plan of Object.values(payload.plans || {})) {
+    assert.equal(plan?.add_ons?.messaging_pack, undefined);
+    assert.equal(plan?.add_ons?.business_units, undefined);
+  }
+  for (const industry of payload?.industry_module_recommendations?.industries || []) {
+    assert.equal(industry.selectableAddOns?.includes('business_units'), false);
+  }
 });
 
 test('calculator clearly separates free estimate from app workflow; formula remains unchanged', () => {
