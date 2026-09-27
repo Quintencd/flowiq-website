@@ -1,5 +1,5 @@
 {
-  "generated_at_utc": "2026-09-14T10:20:30.830Z",
+  "generated_at_utc": "2026-09-27T09:28:08.330Z",
   "source": "src/config/subscriptionPlans.js",
   "plan_order": [
     "starter_lite",
@@ -1083,6 +1083,23 @@
           "value_points": [
             "Absorbs seasonal billing spikes without a full plan move",
             "Keeps month-end billing moving when invoice volume jumps"
+          ],
+          "tier_group": null,
+          "tier_label": null
+        },
+        "extra_price_lists": {
+          "name": "Extra Price Lists",
+          "price": 200,
+          "price_usd": 15,
+          "annual_price": 2160,
+          "annual_price_usd": 162,
+          "annual_discount_percent": 10,
+          "limit": 2,
+          "unit": "3 price lists",
+          "description": "3 additional custom price lists",
+          "value_points": [
+            "Adds customer or channel pricing complexity without upgrading",
+            "Keeps margins controlled across more price books"
           ],
           "tier_group": null,
           "tier_label": null
@@ -2330,7 +2347,6 @@
         "automation_basic",
         "automation_advanced",
         "barcode_scanning",
-        "rfid_stock_tracking",
         "timeiq_finance_bridge",
         "ai_auto_capture"
       ],
