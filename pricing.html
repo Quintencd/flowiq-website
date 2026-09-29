@@ -722,7 +722,7 @@
                 <div class="mt-3 text-2xl font-black text-slate-950">${modulePrice}<span class="ml-1 text-xs font-bold text-slate-500">/${moduleIntervalLabel}</span></div>
                 ${billingInterval === 'annual' && Number(addOn.annual_discount_percent || 0) > 0 ? `<div class="mt-1 text-xs font-black text-emerald-700">Save ${addOn.annual_discount_percent}% with annual billing</div>` : ''}
                 ${addOnKey === 'workiq_addon' ? '<div class="mt-1 text-xs font-bold text-slate-500">Optional through Growth · included from Professional</div>' : ''}
-                ${addOnKey === 'trade_portal' ? '<div class="mt-1 text-xs font-bold text-slate-500">Growth Lite and higher · assisted rollout confirmed during onboarding</div>' : ''}
+                ${addOnKey === 'trade_portal' ? '<div class="mt-1 text-xs font-bold text-slate-500">Available on plans with PriceIQ · billed separately · assisted rollout confirmed during onboarding</div>' : ''}
                 ${payrollCapacityNote ? `<div class="mt-1 text-xs font-black text-orange-700">${payrollCapacityNote}</div>` : ''}
                 <p class="mt-3 text-sm leading-6 text-slate-600">${addOn.description || ''}</p>
                 <ul class="mt-4 space-y-2">
