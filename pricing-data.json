@@ -1,5 +1,5 @@
 {
-  "generated_at_utc": "2026-09-27T09:28:08.330Z",
+  "generated_at_utc": "2026-10-06T11:43:59.270Z",
   "source": "src/config/subscriptionPlans.js",
   "plan_order": [
     "starter_lite",
@@ -241,6 +241,7 @@
         "invoiceiq",
         "purchaseiq",
         "inventoryiq",
+        "reportsiq",
         "journaliq",
         "settings",
         "user_management"
@@ -2347,8 +2348,7 @@
         "automation_basic",
         "automation_advanced",
         "barcode_scanning",
-        "timeiq_finance_bridge",
-        "ai_auto_capture"
+        "timeiq_finance_bridge"
       ],
       "add_ons": {
         "extra_users": {
@@ -2712,6 +2712,7 @@
         "salesiq",
         "companiesiq",
         "accountingiq",
+        "slipiq",
         "invoiceiq",
         "purchaseiq",
         "workiq",
@@ -2744,6 +2745,7 @@
         "automation_advanced",
         "barcode_scanning",
         "timeiq_finance_bridge",
+        "bankingiq",
         "accounting_recon_advanced",
         "accounting_auto_payment_matching",
         "accounting_recon_bulk_confidence",
@@ -2785,23 +2787,6 @@
             "Lets customers place accurate orders from their assigned price list without waiting for a quote",
             "Keeps customer access, stock visibility, documents and order progress safely controlled by the supplier",
             "Includes unlimited customer companies and portal users for one FlowIQ organisation"
-          ],
-          "tier_group": null,
-          "tier_label": null
-        },
-        "ai_auto_capture": {
-          "name": "AI Automation Suite",
-          "price": 519,
-          "price_usd": 49,
-          "annual_price": 5605,
-          "annual_price_usd": 529,
-          "annual_discount_percent": 10,
-          "limit": 1,
-          "unit": "150 capture credits",
-          "description": "AI Automation Suite for document capture, slip capture, import capture, SalesIQ voice transcription, and AgentsIQ proactive workflows with 150 monthly capture credits.",
-          "value_points": [
-            "Turns invoices, purchase orders, supplier bills, slips, import documents, and voice notes into review-ready drafts",
-            "Includes AgentsIQ proactive checks and follow-up workflows while preserving human review before posting or action"
           ],
           "tier_group": null,
           "tier_label": null
@@ -2892,23 +2877,6 @@
           "tier_group": null,
           "tier_label": null
         },
-        "payroll_pack": {
-          "name": "PayrollIQ",
-          "price": 220,
-          "price_usd": 39,
-          "annual_price": 2376,
-          "annual_price_usd": 421,
-          "annual_discount_percent": 10,
-          "limit": 1,
-          "unit": "month",
-          "description": "Complete PayrollIQ payroll, leave, tax, payslip, employee self-service, and accounting handover for up to 5 active employees. Add more active employees for R20 each per month.",
-          "value_points": [
-            "Includes all PayrollIQ features and employee self-service for up to 5 active employees",
-            "Scales simply at R20 per additional active employee; inactive and terminated employees do not count"
-          ],
-          "tier_group": null,
-          "tier_label": null
-        },
         "projectsiq_addon": {
           "name": "ProjectsIQ Starter",
           "price": 1499,
@@ -2980,25 +2948,6 @@
             "Expands ProjectsIQ media storage without changing the project-count tier",
             "Useful for contractors uploading many snag photos, site photos, drawings, and evidence files",
             "Keeps storage costs transparent before high-volume projects eat into margin"
-          ],
-          "tier_group": null,
-          "tier_label": null
-        },
-        "bankingiq_addon": {
-          "name": "BankingIQ",
-          "price": 790,
-          "price_usd": 69,
-          "annual_price": 8532,
-          "annual_price_usd": 745,
-          "annual_discount_percent": 10,
-          "limit": 1,
-          "unit": "workspace",
-          "description": "A complete multi-bank finance control room for bank accounts and statements, supplier, payroll, statutory and once-off payment preparation, saved beneficiaries, maker-checker approvals, scheduled queues, automated reconciliation, anomaly monitoring, cash-flow intelligence, and a complete audit trail.",
-          "value_points": [
-            "Prepare supplier, payroll, SARS, and once-off payments from the correct bank account with saved beneficiaries, per-payment authorization, scheduling, batch queues, status tracking, and proof-ready history",
-            "Reconcile faster with statement imports, suggested matches, safe automation, bulk confidence review, multi-document allocations, and clear exception handling",
-            "Monitor bank balances, cash-flow pressure, unusual activity, and every approval, release, settlement, and reconciliation event in one auditable workspace",
-            "Direct bank feeds and payment execution require a separately approved and configured provider connection; provider charges remain separate"
           ],
           "tier_group": null,
           "tier_label": null

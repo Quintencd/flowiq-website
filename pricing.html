@@ -200,7 +200,7 @@
               <p class="text-xs font-black uppercase tracking-[0.14em] text-emerald-700">After activation</p>
             </div>
             <h3 class="mt-4 text-lg font-black text-slate-950">Your selected plan takes over</h3>
-            <p class="mt-2 text-sm font-semibold leading-6 text-slate-600">Your two-month welcome modules remain included until their stated end date. Add-ons are never billed without confirmation.</p>
+            <p class="mt-2 text-sm font-semibold leading-6 text-slate-600">BankingIQ, PayrollIQ and AI Automation are free for two months from signup. When the offer ends, choose and pay for the add-ons you want to keep. No automatic add-on charges. Enterprise includes these modules.</p>
           </div>
         </div>
         <div class="flex flex-wrap gap-2 border-t border-emerald-200 bg-emerald-50/80 px-5 py-4 text-xs font-black text-emerald-950 md:px-6">
@@ -722,6 +722,7 @@
                 <div class="mt-3 text-2xl font-black text-slate-950">${modulePrice}<span class="ml-1 text-xs font-bold text-slate-500">/${moduleIntervalLabel}</span></div>
                 ${billingInterval === 'annual' && Number(addOn.annual_discount_percent || 0) > 0 ? `<div class="mt-1 text-xs font-black text-emerald-700">Save ${addOn.annual_discount_percent}% with annual billing</div>` : ''}
                 ${addOnKey === 'workiq_addon' ? '<div class="mt-1 text-xs font-bold text-slate-500">Optional through Growth · included from Professional</div>' : ''}
+                ${['ai_auto_capture','payroll_pack','bankingiq_addon'].includes(addOnKey) ? '<div class="mt-1 text-xs font-bold text-slate-500">Add-on on Starter Lite through Scale · included with Enterprise</div>' : ''}
                 ${addOnKey === 'trade_portal' ? '<div class="mt-1 text-xs font-bold text-slate-500">Available on plans with PriceIQ · billed separately · assisted rollout confirmed during onboarding</div>' : ''}
                 ${payrollCapacityNote ? `<div class="mt-1 text-xs font-black text-orange-700">${payrollCapacityNote}</div>` : ''}
                 <p class="mt-3 text-sm leading-6 text-slate-600">${addOn.description || ''}</p>
