@@ -35,6 +35,26 @@
   to = "/.netlify/functions/:splat"
   status = 200
 
+# Microsoft checks this exact HTTPS path on the publisher domain.
+# Serve the public application IDs before the canonical-host redirect.
+[[redirects]]
+  from = "/.well-known/microsoft-identity-association.json"
+  to = "/microsoft-identity-association.json"
+  status = 200
+  force = true
+
+[[headers]]
+  for = "/.well-known/microsoft-identity-association.json"
+  [headers.values]
+    Content-Type = "application/json; charset=utf-8"
+    Cache-Control = "public, max-age=0, must-revalidate"
+
+[[headers]]
+  for = "/microsoft-identity-association.json"
+  [headers.values]
+    Content-Type = "application/json; charset=utf-8"
+    Cache-Control = "public, max-age=0, must-revalidate"
+
 # Canonical: redirect https://flowiq.info (no www) to https://www.flowiq.info
 [[redirects]]
   from = "https://flowiq.info/*"

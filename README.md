@@ -5,7 +5,7 @@
 ## Workspace and Deploy Workflow
 
 - Local folder: `/Users/quintenmac/dev/FreightIQ/flowiq_website`
-- GitHub repo: `https://github.com/Quintencd/freightiq-website`
+- GitHub repo: `https://github.com/Quintencd/flowiq-website.git` (verified from this checkout's remote)
 - Netlify site: `flowiq-website` (`https://www.flowiq.info`)
 - Netlify site id: `e6a1f747-13f1-4856-83c1-b69104047578`
 
@@ -15,6 +15,10 @@ Commands:
 - `npm run deploy:prod` (publish to production)
 
 This folder is intentionally separate from app code changes so marketing releases can be pushed independently.
+
+Current working agreement: Quinten performs GitHub pushes and website publication. Agents prepare validated local changes; they do not run the deployment commands above.
+
+- **Microsoft publisher-domain setup:** [8 October verification-file handoff](docs/Website/2026-10-08_microsoft_publisher_domain_handoff.md). Exact-path routing and JSON headers passed local checks; public publication and Microsoft verification remain pending.
 
 - **Edit here** for homepage, pricing, solutions, use-cases, tools, compare, glossary, signup, login, book-demo, modules, and all SEO pages.
 - **Styles:** `assets/css/styles.css` + inline fallback in each HTML file (see `docs/website-styling-setup.md`).

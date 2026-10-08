@@ -1,0 +1,77 @@
+{
+  "observedAt": "2026-10-08T07:22:40.199318+00:00",
+  "scope": "TOML baseline comparison, exact public JSON shape, local static HTTP file readback and read-only public URL",
+  "websiteRevision": "3b56b7cf34970ce44dfe602e67fbb04f347f245c",
+  "runtime": "Python 3.11.15",
+  "checks": {
+    "tomlParse": true,
+    "twoExactPublicApplicationIds": true,
+    "matchesProviderArtifact": true,
+    "exactSingleRewriteBeforeCanonical": true,
+    "exactTwoHeaders": true,
+    "allPriorConfigurationPreserved": true,
+    "noPrecedenceOverrideFiles": true,
+    "localhostStaticFile200JsonExactBody": true
+  },
+  "fingerprints": {
+    "netlify.toml": "ea2141547fc49f7a828d64e60e0cb00cc1b18a0707f7d1fff3964fd4dfda95d2",
+    "microsoft-identity-association.json": "e44720a6bc4d2a08cbfae8c8aabc96f2144323cbe83d49c30911b2f058cf9272"
+  },
+  "publicUrl": "https://flowiq.info/.well-known/microsoft-identity-association.json",
+  "publicStatus": 404,
+  "limits": [
+    "No website publication or Microsoft domain save occurred.",
+    "Local Netlify emulator is not production CDN acceptance."
+  ],
+  "publicationOwner": "Quinten",
+  "publisherVerification": "pending",
+  "netlifyOfflineLocal": {
+    "checkedAt": "2026-10-08T07:23:41.799629+00:00",
+    "command": "netlify dev --offline --no-open --framework '#static' --dir . --port 8899",
+    "fixture": "immutable copies of candidate TOML and JSON, placeholder pricing file, empty functions/email folders; no linked site or credentials",
+    "checks": [
+      {
+        "path": "/.well-known/microsoft-identity-association.json",
+        "host": "flowiq.info",
+        "status": 200,
+        "contentType": "application/json; charset=UTF-8",
+        "cacheControl": "public, max-age=0, must-revalidate",
+        "location": null
+      },
+      {
+        "path": "/.well-known/microsoft-identity-association.json",
+        "host": "www.flowiq.info",
+        "status": 200,
+        "contentType": "application/json; charset=UTF-8",
+        "cacheControl": "public, max-age=0, must-revalidate",
+        "location": null
+      },
+      {
+        "path": "/microsoft-identity-association.json",
+        "host": "www.flowiq.info",
+        "status": 200,
+        "contentType": "application/json; charset=UTF-8",
+        "cacheControl": "public, max-age=0, must-revalidate",
+        "location": null
+      },
+      {
+        "path": "/pricing",
+        "host": "www.flowiq.info",
+        "status": 200,
+        "contentType": "text/html; charset=UTF-8",
+        "cacheControl": "public, max-age=0, must-revalidate",
+        "location": null
+      },
+      {
+        "path": "/.well-known/unrelated.json",
+        "host": "www.flowiq.info",
+        "status": 404,
+        "contentType": "text/plain; charset=utf-8",
+        "cacheControl": "public, max-age=0, must-revalidate",
+        "location": null
+      }
+    ],
+    "limits": "Local route/header emulator only; production CDN and HTTPS canonical-host behavior require public readback after Quinten publishes."
+  },
+  "validationCorrection": "Initial localhost assertion compared charset spelling literally; Netlify emits UTF-8. Rechecked MIME type and charset using the standard HTTP header parser; candidate configuration was unchanged."
+}
