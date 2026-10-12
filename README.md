@@ -18,6 +18,8 @@ This folder is intentionally separate from app code changes so marketing release
 
 Current working agreement: Quinten performs GitHub pushes and website publication. Agents prepare validated local changes; they do not run the deployment commands above.
 
+- **BrandIQ Google OAuth:** [11 October optional conversion disclosure handoff](docs/Website/2026-10-11_brandiq_google_conversion_disclosure.md). Local-only Google Data Manager payload/consent explanation; owner review and website publication remain separate gates.
+
 - **Microsoft publisher-domain setup:** [8 October verification-file handoff](docs/Website/2026-10-08_microsoft_publisher_domain_handoff.md). Exact-path routing and JSON headers passed local checks; public publication and Microsoft verification remain pending.
 
 - **Edit here** for homepage, pricing, solutions, use-cases, tools, compare, glossary, signup, login, book-demo, modules, and all SEO pages.
