@@ -44,3 +44,7 @@ PriceIQ is already included with Growth Lite, so a second module fee on that pla
 4. **Website publication:** local source and generated payload changes are not a deployed website or app release. The user publishes website code through GitHub. No Netlify deploy was run.
 
 Website presentation risk is expected below 10% because prices and eligible plans are read from the generated catalogue. The RFID plan correction reduces an identified free-access mismatch; it needs app release validation, particularly any existing Scale organisation that relied on the incorrect local feature grant. Database RFID guards already require the paid pack.
+
+## 19 November — JobIQ pricing for assisted onboarding
+
+The live public pricing data already lists JobIQ once per paid FlowIQ workspace on all seven paid plans. It supplies R990 or USD 69 monthly and R10,692 or USD 745 annually from the existing catalogue. The public pricing renderer omitted the add-on. The website now displays its card, assisted-onboarding label and plan comparison row from those same inputs. The catalogue, checkout and plan limits did not change. The rendered monthly and annual views passed for both currencies using the live public pricing data, and the comparison showed an add-on on all seven plans. Quinten owns the website push and publication.
