@@ -262,6 +262,19 @@
                         </div>
 
                         <div>
+                            <label for="baseCurrency" class="block text-sm font-medium text-slate-300 mb-2">Base Currency *</label>
+                            <input id="baseCurrency" name="baseCurrency" type="hidden" required>
+                            <div class="relative" data-flowiq-select data-flowiq-select-for="baseCurrency">
+                                <button id="baseCurrencyButton" type="button" aria-haspopup="listbox" aria-expanded="false" class="flowiq-select-btn is-placeholder">
+                                    <span id="baseCurrencyButtonLabel">Select base currency</span>
+                                    <i data-lucide="chevron-down" class="w-5 h-5 text-slate-400"></i>
+                                </button>
+                                <div id="baseCurrencyMenu" class="flowiq-select-menu hidden" role="listbox" aria-label="Base currency options"></div>
+                            </div>
+                            <p class="mt-2 text-xs text-slate-400">Choose carefully. The base currency is fixed after your company is created. You can enable other trading currencies later.</p>
+                        </div>
+
+                        <div>
                             <label for="companyWebsite" class="block text-sm font-medium text-slate-300 mb-2">Company Website</label>
                             <input
                                 id="companyWebsite"
@@ -1010,6 +1023,12 @@
             });
 
             setupFlowIQSelect({
+                fieldId: 'baseCurrency', buttonId: 'baseCurrencyButton', labelId: 'baseCurrencyButtonLabel',
+                menuId: 'baseCurrencyMenu', placeholder: 'Select base currency',
+                options: ['ZAR','USD','EUR','GBP','CNY','AUD','CAD','JPY','NZD','SGD'].map(code => ({ value: code, text: code })),
+            });
+
+            setupFlowIQSelect({
                 fieldId: 'country',
                 buttonId: 'countryButton',
                 labelId: 'countryButtonLabel',
@@ -1107,6 +1126,7 @@
                 'password': 'password',
                 'company name': 'companyName',
                 'company_name': 'companyName',
+                'base currency': 'baseCurrency',
                 'company website': 'companyWebsite',
                 'company_website_url': 'companyWebsite',
                 'signup referral source': 'signupReferralSource',
@@ -1292,6 +1312,7 @@
                 'email',
                 'password',
                 'companyName',
+                'baseCurrency',
                 'companyWebsite',
                 'signupReferralSource',
                 'signupReferralDetail',
@@ -1445,6 +1466,10 @@
                     validationErrors.push('company name');
                 }
                 
+                if (!['ZAR','USD','EUR','GBP','CNY','AUD','CAD','JPY','NZD','SGD'].includes(String(formData.get('baseCurrency') || ''))) {
+                    validationErrors.push('base currency');
+                }
+
                 if (!formData.get('firstName') || !formData.get('firstName').toString().trim()) {
                     validationErrors.push('first name');
                 }
@@ -1522,6 +1547,10 @@
                 
                 // ✅ BYPASS RATE LIMITS: Use Edge Function to avoid email rate limits
                 signupFailureStage = 'signup_request';
+                const currencyProtocol = await fetch("https://yvbhjlmvpipniedwvdji.supabase.co/functions/v1/public-signup", { method: "OPTIONS" });
+                if (!currencyProtocol.ok || currencyProtocol.headers.get('X-FlowIQ-Currency-Setup') !== 'creation-v1') {
+                    throw new Error('Company setup is being updated. Please reload before creating your account.');
+                }
                 const response = await fetch("https://yvbhjlmvpipniedwvdji.supabase.co/functions/v1/public-signup", {
                     method: "POST",
                     headers: {
@@ -1535,6 +1564,7 @@
                         password: formData.get('password'),
                         org_id: orgId,  // Required by edge function
                         company_name: formData.get('companyName'),
+                        base_currency: formData.get('baseCurrency'),
                         industry: formData.get('industry'),
                         employees: formData.get('employees'),
                         country: formData.get('country'),
@@ -1592,6 +1622,10 @@
                     throw new Error(`Server error: ${responseText || response.statusText || 'Unknown error'}`);
                 }
                 
+                if (response.ok && data.base_currency !== formData.get('baseCurrency')) {
+                    throw new Error('Your account response could not confirm the selected currency. Please contact support before continuing.');
+                }
+
                 if (!response.ok) {
                     // Use details if available, otherwise error, otherwise default message
                     const errorMessage = data.details || data.error || `Failed to create account (${response.status})`;

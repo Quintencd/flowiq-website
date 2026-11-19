@@ -35,3 +35,37 @@ Recovery trigger: public association-file failure or a regression attributable t
 - [Microsoft publisher-domain configuration](https://learn.microsoft.com/en-us/entra/identity-platform/howto-configure-publisher-domain): association format, URL, supported content types and Entra verification.
 - [Netlify rewrites](https://docs.netlify.com/manage/routing/redirects/rewrites-proxies/) and [custom headers](https://docs.netlify.com/manage/routing/headers/): status-200 rewrite and static-file response configuration.
 - [Existing canonicalization decision](2026-08-08_search_console_indexing_canonicalization.md).
+
+
+## 24 October 2026 — new FlowIQ work email app association
+
+After Quinten approved and Calendar main created the work-tenant email app,
+this local successor adds public client ID `5c1a7411-162c-4e18-a305-93b88b89008e`
+to `microsoft-identity-association.json`. Both original bootstrap application IDs
+remain present. No new Calendar app ID is invented and no credential is included.
+Actual provider readback is retained in the main application Settings record:
+`docs/Settings/evidence/2026-10-24_microsoft_email_registration/registration-configured-original.json`.
+
+Target reverified: this website checkout, main, origin
+`https://github.com/Quintencd/flowiq-website.git`, HEAD
+`30c9cb7f771db4b6702f4c1a1f60a11c7427c000`. Selected preimages were clean.
+The routing file still has SHA256
+`ea2141547fc49f7a828d64e60e0cb00cc1b18a0707f7d1fff3964fd4dfda95d2`,
+identical to the 8 October tested route/header candidate. This increment changes
+only JSON data and dated documentation; it does not rerun or claim a new CDN test.
+JSON parsing verifies exactly the original two IDs plus the approved new email
+ID, without duplicates or additional fields. Scoped whitespace validation applies.
+
+The current public URL was not verifiable: the web reader returned unavailable
+and the bounded shell fetch could not resolve the host. The historical 404 is
+not a current status claim. Quinten owns GitHub push/publication of the prepared
+website source. After publication Calendar main must verify exact HTTPS 200/JSON
+body and then complete the separate Entra domain verification/save action with
+applicable approval. Domain association is only a prerequisite; it does not give
+publisher verification, customer consent or live email/Calendar readiness.
+
+Recovery for this additive JSON increment is removal of only the new client-ID
+entry through Quinten's normal publication workflow, preserving both prior IDs
+and routing. The exact preimages and manifest are retained at
+`/Users/quintenmac/Documents/Codex/2026-10-06/can-2/work/publisher-domain-20261024`.
+No website deployment, push, Git/index change or Entra domain save occurred.

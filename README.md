@@ -22,7 +22,7 @@ Current working agreement: Quinten performs GitHub pushes and website publicatio
 
 - **BrandIQ Google OAuth:** [11 October optional conversion disclosure handoff](docs/Website/2026-10-11_brandiq_google_conversion_disclosure.md). Local-only Google Data Manager payload/consent explanation; owner review and website publication remain separate gates.
 
-- **Microsoft publisher-domain setup:** [8 October verification-file handoff](docs/Website/2026-10-08_microsoft_publisher_domain_handoff.md). Exact-path routing and JSON headers passed local checks; public publication and Microsoft verification remain pending.
+- **Microsoft publisher-domain setup:** [8 October verification-file handoff](docs/Website/2026-10-08_microsoft_publisher_domain_handoff.md). 24 October successor adds the approved FlowIQ work email app ID while preserving both prior IDs; exact-path routing is unchanged. Public publication and Microsoft verification remain pending.
 
 - **Edit here** for homepage, pricing, solutions, use-cases, tools, compare, glossary, signup, login, book-demo, modules, and all SEO pages.
 - **Styles:** `assets/css/styles.css` + inline fallback in each HTML file (see `docs/website-styling-setup.md`).

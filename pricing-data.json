@@ -1,5 +1,5 @@
 {
-  "generated_at_utc": "2026-10-06T11:43:59.270Z",
+  "generated_at_utc": "2026-10-26T07:16:33.350Z",
   "source": "src/config/subscriptionPlans.js",
   "plan_order": [
     "starter_lite",
@@ -344,7 +344,7 @@
           "description": "Warehouse-scoped job cards for repair, service, refurbishment and controlled manufacturing work.",
           "value_points": [
             "Runs quote approval, labour, evidence, linked costs and job progress in one focused workspace",
-            "Includes unlimited named JobIQ users and warehouses within the organisation; normal plan limits still apply to connected invoices and purchases",
+            "No additional JobIQ per-user or per-warehouse fee; existing plan limits for users, warehouses, SKUs, invoices and purchases still apply",
             "Manufacturing actions appear only when the base plan also includes BOM & Manufacturing and the user has InventoryIQ access"
           ],
           "tier_group": null,
@@ -746,7 +746,7 @@
           "description": "Warehouse-scoped job cards for repair, service, refurbishment and controlled manufacturing work.",
           "value_points": [
             "Runs quote approval, labour, evidence, linked costs and job progress in one focused workspace",
-            "Includes unlimited named JobIQ users and warehouses within the organisation; normal plan limits still apply to connected invoices and purchases",
+            "No additional JobIQ per-user or per-warehouse fee; existing plan limits for users, warehouses, SKUs, invoices and purchases still apply",
             "Manufacturing actions appear only when the base plan also includes BOM & Manufacturing and the user has InventoryIQ access"
           ],
           "tier_group": null,
@@ -1186,7 +1186,7 @@
           "description": "Warehouse-scoped job cards for repair, service, refurbishment and controlled manufacturing work.",
           "value_points": [
             "Runs quote approval, labour, evidence, linked costs and job progress in one focused workspace",
-            "Includes unlimited named JobIQ users and warehouses within the organisation; normal plan limits still apply to connected invoices and purchases",
+            "No additional JobIQ per-user or per-warehouse fee; existing plan limits for users, warehouses, SKUs, invoices and purchases still apply",
             "Manufacturing actions appear only when the base plan also includes BOM & Manufacturing and the user has InventoryIQ access"
           ],
           "tier_group": null,
@@ -1633,7 +1633,7 @@
           "description": "Warehouse-scoped job cards for repair, service, refurbishment and controlled manufacturing work.",
           "value_points": [
             "Runs quote approval, labour, evidence, linked costs and job progress in one focused workspace",
-            "Includes unlimited named JobIQ users and warehouses within the organisation; normal plan limits still apply to connected invoices and purchases",
+            "No additional JobIQ per-user or per-warehouse fee; existing plan limits for users, warehouses, SKUs, invoices and purchases still apply",
             "Manufacturing actions appear only when the base plan also includes BOM & Manufacturing and the user has InventoryIQ access"
           ],
           "tier_group": null,
@@ -2048,7 +2048,7 @@
           "description": "Warehouse-scoped job cards for repair, service, refurbishment and controlled manufacturing work.",
           "value_points": [
             "Runs quote approval, labour, evidence, linked costs and job progress in one focused workspace",
-            "Includes unlimited named JobIQ users and warehouses within the organisation; normal plan limits still apply to connected invoices and purchases",
+            "No additional JobIQ per-user or per-warehouse fee; existing plan limits for users, warehouses, SKUs, invoices and purchases still apply",
             "Manufacturing actions appear only when the base plan also includes BOM & Manufacturing and the user has InventoryIQ access"
           ],
           "tier_group": null,
@@ -2432,7 +2432,7 @@
           "description": "Warehouse-scoped job cards for repair, service, refurbishment and controlled manufacturing work.",
           "value_points": [
             "Runs quote approval, labour, evidence, linked costs and job progress in one focused workspace",
-            "Includes unlimited named JobIQ users and warehouses within the organisation; normal plan limits still apply to connected invoices and purchases",
+            "No additional JobIQ per-user or per-warehouse fee; existing plan limits for users, warehouses, SKUs, invoices and purchases still apply",
             "Manufacturing actions appear only when the base plan also includes BOM & Manufacturing and the user has InventoryIQ access"
           ],
           "tier_group": null,
@@ -2803,7 +2803,7 @@
           "description": "Warehouse-scoped job cards for repair, service, refurbishment and controlled manufacturing work.",
           "value_points": [
             "Runs quote approval, labour, evidence, linked costs and job progress in one focused workspace",
-            "Includes unlimited named JobIQ users and warehouses within the organisation; normal plan limits still apply to connected invoices and purchases",
+            "No additional JobIQ per-user or per-warehouse fee; existing plan limits for users, warehouses, SKUs, invoices and purchases still apply",
             "Manufacturing actions appear only when the base plan also includes BOM & Manufacturing and the user has InventoryIQ access"
           ],
           "tier_group": null,
