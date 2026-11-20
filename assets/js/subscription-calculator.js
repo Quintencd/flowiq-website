@@ -1,5 +1,6 @@
 (() => {
   const payrollIncludedEmployees = 5;
+  const posiqAddOnKey = 'posiq_till_integration_pack';
   // The public catalogue omits the internal employee billing line.
   const payrollEmployeeRates = {
     ZAR: { monthly: 20, annual: 216 },
@@ -16,7 +17,7 @@
   const moduleNotes = {
     trade_portal: 'Requires PriceIQ · assisted rollout',
     jobiq_addon: 'Assisted onboarding',
-    posiq_till_integration_pack: 'Locations · 0 to skip'
+    [posiqAddOnKey]: 'Enter 0 to skip'
   };
 
   function create(tag, className, content) {
@@ -122,7 +123,7 @@
       const copy = create('span', 'subscription-option-copy');
       copy.append(create('strong', '', offer.name));
       if (key !== 'no-projects') {
-        const unit = kind === 'quantity' ? (key === 'posiq_till_integration_pack' ? 'location' : 'pack') : '';
+        const unit = kind === 'quantity' ? (key === posiqAddOnKey ? 'location' : 'pack') : '';
         copy.append(create('small', '', rate(unitAmount(offer), unit)));
       }
       const unitNote = moduleNotes[key] || (kind === 'quantity' && offer.unit ? offer.unit + ' per pack' : '');
@@ -167,6 +168,11 @@
         ? allowance + ' Extra seats ' + rate(unitAmount(seatOffer), 'user') + '.'
         : allowance;
 
+      const posiq = byId('posiq');
+      const posiqOffer = moduleKeys.includes(posiqAddOnKey) && plan.add_ons?.[posiqAddOnKey];
+      posiq.hidden = !posiqOffer;
+      posiq.replaceChildren(...(posiqOffer ? [optionRow(posiqAddOnKey, posiqOffer, 'quantity')] : []));
+
       const includedNames = moduleKeys
         .filter((key) => plan.features?.includes(includedModules[key]) && !plan.add_ons?.[key])
         .map((key) => catalogue.planOrder.map((id) => catalogue.plans[id]?.add_ons?.[key]?.name).find(Boolean))
@@ -182,11 +188,11 @@
       projects.append(optionRow('no-projects', { name: 'No ProjectsIQ add-on' }, 'radio'));
       for (const key of moduleKeys) {
         const offer = plan.add_ons?.[key];
-        if (!offer) continue;
+        if (!offer || key === posiqAddOnKey) continue;
         if (offer.tier_group === 'projectsiq') {
           projects.append(optionRow(key, offer, 'radio'));
         } else {
-          modules.push(optionRow(key, offer, key === 'posiq_till_integration_pack' ? 'quantity' : 'checkbox'));
+          modules.push(optionRow(key, offer, 'checkbox'));
           if (key === 'payroll_pack') {
             const payroll = create('label', 'subscription-option subscription-payroll');
             payroll.id = 'subscription-payroll-employees-row';
@@ -258,7 +264,9 @@
       byId('line-items').replaceChildren();
       if (custom) {
         total.textContent = 'Custom quote';
-        billingNote.textContent = 'Get pricing tailored to your team and modules.';
+        billingNote.textContent = plan.add_ons?.[posiqAddOnKey]
+          ? 'Discuss your team, modules and POSIQ till locations in your Enterprise quote.'
+          : 'Get pricing tailored to your team and modules.';
         return;
       }
 

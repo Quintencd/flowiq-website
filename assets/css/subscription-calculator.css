@@ -159,6 +159,7 @@ html:has(.subscription-dialog[open]) { overflow: hidden; }
   background: #f8fafc;
   border-radius: .7rem;
 }
+#subscription-posiq { margin-top: .45rem; }
 .subscription-team p { margin: .15rem 0 0; }
 .subscription-dialog input[type="number"] {
   width: 5rem;
