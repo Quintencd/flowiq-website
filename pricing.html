@@ -113,6 +113,7 @@
     nav.fixed,nav.sticky{top:0;left:0;right:0;z-index:9999!important}#mobileMenu{z-index:10000}
   </style>
   <link rel="stylesheet" href="/flowiq-light.css?v=21">
+  <link rel="stylesheet" href="/assets/css/subscription-calculator.css">
   <script src="/assets/smartlook.js"></script>
 </head>
 <body class="bg-slate-50 text-slate-900 antialiased marketing-shell premium-light-page overflow-x-hidden" data-page-template="pricing" data-page-intent="plan_selection" data-page-topic="pricing">
@@ -359,6 +360,81 @@
     </div>
   </div>
 
+  <section class="subscription-launch" aria-labelledby="subscription-launch-title">
+    <div>
+      <h2 id="subscription-launch-title">What will FlowIQ cost for your team?</h2>
+      <p>Choose a plan, add modules and see your monthly estimate.</p>
+    </div>
+    <div>
+      <button id="subscription-calculator-open" class="subscription-button" type="button" aria-haspopup="dialog" disabled>
+        <svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
+          <rect x="5" y="3" width="14" height="18" rx="2"/><path d="M8 7h8m-8 5h1m3 0h1m3 0h.01m-8 4h1m3 0h1m3 0h.01"/>
+        </svg>
+        Subscription Calculator
+      </button>
+      <p id="subscription-calculator-status" class="subscription-status" role="status">Loading pricing…</p>
+    </div>
+  </section>
+
+  <dialog id="subscription-calculator" class="subscription-dialog" aria-labelledby="subscription-title">
+    <header class="subscription-header">
+      <div>
+        <h2 id="subscription-title">Subscription Calculator</h2>
+        <p>Build an estimate for your FlowIQ workspace.</p>
+      </div>
+      <form method="dialog">
+        <button type="submit" class="subscription-close" aria-label="Close calculator" autofocus>×</button>
+      </form>
+    </header>
+    <div class="subscription-layout">
+      <div class="subscription-controls">
+        <fieldset>
+          <legend>Subscription plan</legend>
+          <div id="subscription-plans" class="subscription-plans"></div>
+        </fieldset>
+        <div id="subscription-plan-options">
+          <div class="subscription-team">
+            <div>
+              <label for="subscription-users">Total users</label>
+              <p id="subscription-users-hint"></p>
+            </div>
+            <input id="subscription-users" type="number" inputmode="numeric" min="1" step="1" value="1" aria-describedby="subscription-users-hint">
+          </div>
+          <div id="subscription-included" class="subscription-included" hidden></div>
+          <fieldset class="subscription-section">
+            <legend>Optional modules</legend>
+            <div id="subscription-modules" class="subscription-options"></div>
+          </fieldset>
+          <details id="subscription-capacity" class="subscription-section subscription-details">
+            <summary>Extra capacity</summary>
+            <div id="subscription-packs" class="subscription-options"></div>
+          </details>
+        </div>
+        <p id="subscription-changes" class="subscription-change" role="status"></p>
+      </div>
+      <aside class="subscription-summary" aria-label="Price estimate">
+        <fieldset class="subscription-period">
+          <legend>Billing</legend>
+          <div>
+            <label><input type="radio" name="subscription-interval" value="monthly" checked><span>Monthly</span></label>
+            <label><input type="radio" name="subscription-interval" value="annual"><span>Annual</span></label>
+          </div>
+        </fieldset>
+        <div class="subscription-total" aria-live="polite" aria-atomic="true">
+          <p id="subscription-total-label">Estimated monthly cost</p>
+          <strong id="subscription-total"></strong>
+          <p id="subscription-billing-note"></p>
+        </div>
+        <details id="subscription-breakdown" class="subscription-breakdown">
+          <summary>Price breakdown</summary>
+          <dl id="subscription-line-items"></dl>
+        </details>
+        <p id="subscription-estimate-note" class="subscription-estimate-note">Standard recurring prices. Signup offers are excluded. Confirm final pricing in FlowIQ.</p>
+        <a id="subscription-quote" class="subscription-button" href="/book-demo?source=pricing_calculator&amp;plan=enterprise" hidden>Discuss Enterprise pricing</a>
+      </aside>
+    </div>
+  </dialog>
+
   <!-- Footer -->
   <footer class="bg-white border-t border-slate-200 mt-20">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
@@ -371,6 +447,7 @@
     </div>
   </footer>
 
+  <script src="/assets/js/subscription-calculator.js"></script>
   <script>
     let plans = {};
     let planOrder = [];
@@ -396,6 +473,7 @@
       renderComparisonTable();
       renderAddOns();
       renderCapacityAddOns();
+      updateSubscriptionCalculator();
 
       if (window.FlowIQGrowthAnalytics && typeof window.FlowIQGrowthAnalytics.trackEvent === 'function') {
         window.FlowIQGrowthAnalytics.trackEvent('pricing_toggle', {
@@ -1048,6 +1126,19 @@
       trackBasePlanViews();
     }
 
+    const subscriptionCalculator = window.FlowIQSubscriptionCalculator?.mount({
+      root: document.getElementById('subscription-calculator'),
+      launcher: document.getElementById('subscription-calculator-open'),
+      status: document.getElementById('subscription-calculator-status'),
+      moduleKeys: addOnOrder.filter((key) => key !== 'extra_users'),
+      capacityKeys: capacityAddOnOrder,
+      setBillingInterval
+    });
+
+    function updateSubscriptionCalculator() {
+      subscriptionCalculator?.update({ plans, planOrder, billingInterval, currency: pricingCurrencyState.selected });
+    }
+
     async function loadPricingData() {
       const response = await fetch('/pricing-data.json', { cache: 'no-cache' });
       if (!response.ok) throw new Error(`Failed to load pricing data (${response.status})`);
@@ -1068,6 +1159,7 @@
       renderAddOns();
       renderCapacityAddOns();
       renderComparisonTable();
+      updateSubscriptionCalculator();
     }
 
     function detectPricingCountry() {
@@ -1087,9 +1179,11 @@
         renderCapacityAddOns();
         renderIndustryRecommendation();
         renderComparisonTable();
+        updateSubscriptionCalculator();
         detectPricingCountry();
       })
       .catch((error) => {
+        subscriptionCalculator?.unavailable();
         console.error('Pricing page failed to load canonical data', error);
         const container = document.getElementById('pricing-table-wrap');
         if (container) {
