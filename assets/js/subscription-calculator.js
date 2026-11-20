@@ -14,7 +14,7 @@
     forecasting_intelligence_pack: 'forecastiq_advanced'
   };
   const moduleNotes = {
-    trade_portal: 'Assisted rollout',
+    trade_portal: 'Requires PriceIQ · assisted rollout',
     jobiq_addon: 'Assisted onboarding',
     posiq_till_integration_pack: 'Locations · 0 to skip'
   };
@@ -136,6 +136,18 @@
       return label;
     }
 
+    function rfidQuote(offer) {
+      const row = create('div', 'subscription-option subscription-option-quote');
+      const copy = create('span', 'subscription-option-copy');
+      copy.append(create('strong', '', offer.name),
+        create('small', '', 'Excluded from estimate. Hardware, tags and installation are quoted separately.'));
+      const link = create('a', 'subscription-quote-link', 'Request a quote');
+      link.href = '/book-demo?source=pricing_calculator&module=rfid_stock_tracking_pack';
+      link.setAttribute('aria-label', 'Request an RFID quote');
+      row.append(copy, link);
+      return row;
+    }
+
     function renderOptions() {
       const plan = selectedPlan();
       const custom = plan[catalogue.billingInterval]?.custom;
@@ -189,8 +201,16 @@
           }
         }
       }
+      const rfidOffer = plan.add_ons?.rfid_stock_tracking_pack;
+      if (rfidOffer) modules.push(rfidQuote(rfidOffer));
       if (projects.querySelectorAll('input').length > 1) modules.push(projects);
       moduleList.replaceChildren(...(modules.length ? modules : [create('p', '', 'No optional modules for this plan.')]));
+      const tradePortalPlan = catalogue.planOrder.find((key) => catalogue.plans[key]?.add_ons?.trade_portal);
+      const moduleHint = byId('module-hint');
+      moduleHint.hidden = Boolean(plan.add_ons?.trade_portal) || !tradePortalPlan;
+      moduleHint.textContent = moduleHint.hidden
+        ? ''
+        : 'Trade Portal is available from ' + catalogue.plans[tradePortalPlan].name + ' with PriceIQ.';
 
       const packs = capacityKeys.filter((key) => plan.add_ons?.[key])
         .map((key) => optionRow(key, plan.add_ons[key], 'quantity'));

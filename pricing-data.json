@@ -1,5 +1,5 @@
 {
-  "generated_at_utc": "2026-10-26T07:16:33.350Z",
+  "generated_at_utc": "2026-11-20T13:19:29.003Z",
   "source": "src/config/subscriptionPlans.js",
   "plan_order": [
     "starter_lite",
@@ -380,23 +380,6 @@
           "value_points": [
             "Connects ecommerce demand back into operational stock and invoice workflows",
             "Reduces manual order and catalogue handling across online channels"
-          ],
-          "tier_group": null,
-          "tier_label": null
-        },
-        "brandiq_addon": {
-          "name": "BrandIQ",
-          "price": 1490,
-          "price_usd": 149,
-          "annual_price": 16092,
-          "annual_price_usd": 1609,
-          "annual_discount_percent": 10,
-          "limit": 1,
-          "unit": "workspace",
-          "description": "Brand strategy, Growth Signals, content workflows, campaign management, publishing connections, attribution and Agency HQ.",
-          "value_points": [
-            "Runs as a focused growth workspace without requiring the client to replace its existing ERP",
-            "Connects approved campaigns to measurable leads, sales, revenue and return on spend"
           ],
           "tier_group": null,
           "tier_label": null
@@ -782,23 +765,6 @@
           "value_points": [
             "Connects ecommerce demand back into operational stock and invoice workflows",
             "Reduces manual order and catalogue handling across online channels"
-          ],
-          "tier_group": null,
-          "tier_label": null
-        },
-        "brandiq_addon": {
-          "name": "BrandIQ",
-          "price": 1490,
-          "price_usd": 149,
-          "annual_price": 16092,
-          "annual_price_usd": 1609,
-          "annual_discount_percent": 10,
-          "limit": 1,
-          "unit": "workspace",
-          "description": "Brand strategy, Growth Signals, content workflows, campaign management, publishing connections, attribution and Agency HQ.",
-          "value_points": [
-            "Runs as a focused growth workspace without requiring the client to replace its existing ERP",
-            "Connects approved campaigns to measurable leads, sales, revenue and return on spend"
           ],
           "tier_group": null,
           "tier_label": null
@@ -1222,23 +1188,6 @@
           "value_points": [
             "Connects ecommerce demand back into operational stock and invoice workflows",
             "Reduces manual order and catalogue handling across online channels"
-          ],
-          "tier_group": null,
-          "tier_label": null
-        },
-        "brandiq_addon": {
-          "name": "BrandIQ",
-          "price": 1490,
-          "price_usd": 149,
-          "annual_price": 16092,
-          "annual_price_usd": 1609,
-          "annual_discount_percent": 10,
-          "limit": 1,
-          "unit": "workspace",
-          "description": "Brand strategy, Growth Signals, content workflows, campaign management, publishing connections, attribution and Agency HQ.",
-          "value_points": [
-            "Runs as a focused growth workspace without requiring the client to replace its existing ERP",
-            "Connects approved campaigns to measurable leads, sales, revenue and return on spend"
           ],
           "tier_group": null,
           "tier_label": null
@@ -1673,23 +1622,6 @@
           "tier_group": null,
           "tier_label": null
         },
-        "brandiq_addon": {
-          "name": "BrandIQ",
-          "price": 1490,
-          "price_usd": 149,
-          "annual_price": 16092,
-          "annual_price_usd": 1609,
-          "annual_discount_percent": 10,
-          "limit": 1,
-          "unit": "workspace",
-          "description": "Brand strategy, Growth Signals, content workflows, campaign management, publishing connections, attribution and Agency HQ.",
-          "value_points": [
-            "Runs as a focused growth workspace without requiring the client to replace its existing ERP",
-            "Connects approved campaigns to measurable leads, sales, revenue and return on spend"
-          ],
-          "tier_group": null,
-          "tier_label": null
-        },
         "posiq_till_integration_pack": {
           "name": "POSIQ Till Integration Pack",
           "price": 790,
@@ -2088,23 +2020,6 @@
           "tier_group": null,
           "tier_label": null
         },
-        "brandiq_addon": {
-          "name": "BrandIQ",
-          "price": 1490,
-          "price_usd": 149,
-          "annual_price": 16092,
-          "annual_price_usd": 1609,
-          "annual_discount_percent": 10,
-          "limit": 1,
-          "unit": "workspace",
-          "description": "Brand strategy, Growth Signals, content workflows, campaign management, publishing connections, attribution and Agency HQ.",
-          "value_points": [
-            "Runs as a focused growth workspace without requiring the client to replace its existing ERP",
-            "Connects approved campaigns to measurable leads, sales, revenue and return on spend"
-          ],
-          "tier_group": null,
-          "tier_label": null
-        },
         "posiq_till_integration_pack": {
           "name": "POSIQ Till Integration Pack",
           "price": 790,
@@ -2472,23 +2387,6 @@
           "tier_group": null,
           "tier_label": null
         },
-        "brandiq_addon": {
-          "name": "BrandIQ",
-          "price": 1490,
-          "price_usd": 149,
-          "annual_price": 16092,
-          "annual_price_usd": 1609,
-          "annual_discount_percent": 10,
-          "limit": 1,
-          "unit": "workspace",
-          "description": "Brand strategy, Growth Signals, content workflows, campaign management, publishing connections, attribution and Agency HQ.",
-          "value_points": [
-            "Runs as a focused growth workspace without requiring the client to replace its existing ERP",
-            "Connects approved campaigns to measurable leads, sales, revenue and return on spend"
-          ],
-          "tier_group": null,
-          "tier_label": null
-        },
         "posiq_till_integration_pack": {
           "name": "POSIQ Till Integration Pack",
           "price": 790,
@@ -2839,23 +2737,6 @@
           "value_points": [
             "Connects ecommerce demand back into operational stock and invoice workflows",
             "Reduces manual order and catalogue handling across online channels"
-          ],
-          "tier_group": null,
-          "tier_label": null
-        },
-        "brandiq_addon": {
-          "name": "BrandIQ",
-          "price": 1490,
-          "price_usd": 149,
-          "annual_price": 16092,
-          "annual_price_usd": 1609,
-          "annual_discount_percent": 10,
-          "limit": 1,
-          "unit": "workspace",
-          "description": "Brand strategy, Growth Signals, content workflows, campaign management, publishing connections, attribution and Agency HQ.",
-          "value_points": [
-            "Runs as a focused growth workspace without requiring the client to replace its existing ERP",
-            "Connects approved campaigns to measurable leads, sales, revenue and return on spend"
           ],
           "tier_group": null,
           "tier_label": null

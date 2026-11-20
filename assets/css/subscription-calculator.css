@@ -194,6 +194,14 @@ html:has(.subscription-dialog[open]) { overflow: hidden; }
   border-radius: .65rem;
   cursor: pointer;
 }
+.subscription-option-quote { cursor: default; }
+.subscription-quote-link {
+  flex: none;
+  color: #9a3412;
+  font-size: .75rem;
+  font-weight: 700;
+  text-decoration: underline;
+}
 .subscription-option:hover { border-color: #fdba74; }
 .subscription-option:has(input:checked) { background: #fff7ed; border-color: #fb923c; }
 .subscription-option-copy { display: grid; gap: .12rem; font-size: .8rem; }
